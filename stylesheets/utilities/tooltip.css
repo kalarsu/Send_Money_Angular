@@ -1,0 +1,43 @@
+/* line 3, ../../sass/utilities/tooltip.scss */
+.tip {
+  margin-top: 15px;
+  background: #F1EFE6;
+  border: 2px solid #B19859;
+  padding: 10px;
+  font-size: 11px;
+  position: relative;
+  width: 100%;
+  color: #929497;
+  font-weight: bold;
+}
+/* line 13, ../../sass/utilities/tooltip.scss */
+.tip.err {
+  color: #D0021B;
+  border-color: #D0021B;
+}
+/* line 16, ../../sass/utilities/tooltip.scss */
+.tip.err:before {
+  border-bottom-color: #D0021B;
+}
+
+/* line 21, ../../sass/utilities/tooltip.scss */
+.tip:before {
+  position: absolute;
+  top: -14px;
+  display: inline-block;
+  border-right: 28px solid transparent;
+  border-bottom: 14px solid #B19859;
+  border-left: 28px solid transparent;
+  content: '';
+}
+
+/* line 30, ../../sass/utilities/tooltip.scss */
+.tip:after {
+  position: absolute;
+  top: -11px;
+  display: inline-block;
+  border-right: 28px solid transparent;
+  border-bottom: 12px solid #F1EFE6;
+  border-left: 28px solid transparent;
+  content: '';
+}

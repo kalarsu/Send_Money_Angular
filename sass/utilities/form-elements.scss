@@ -1,0 +1,132 @@
+@import "application.scss";
+
+//------ dropdown  --------------------------------
+.dropdown{ 
+	background: none $white;
+	&:hover{
+		background: none $white;
+	}
+}
+.dorpdown-container{
+	height: 38px;
+  .el-brown-title{
+    height: 16px;
+    line-height: 16px;
+  }
+}
+
+//-------- full width button-----------------------
+.full-width-btn{
+	margin-top: 25px;
+	width: 100%;
+	height: 45px;
+	border: 0;
+	display: block;
+	background: $primaryBtnColor;
+	cursor: pointer;
+	-webkit-appearance: none;
+	-moz-webkit-appearance: none;
+	-ms-webkit-appearance: none;
+	-o-webkit-appearance: none;
+	webkit-appearance: none;
+	-webkit-tap-highlight-color: transparent;
+	color: $primaryBtnTextColor;
+	font-size: 18px;
+	text-align: center;
+	font-weight: 700;
+	text-shadow: none;
+}
+
+//----------Buttona----------------------------------
+button:hover{
+	background: $primaryBtnCoverHover;
+	text-decoration: none;
+}
+
+input[type="submit"]:disabled{
+	@include opacity(0.3);
+}
+
+//----------Drop down menu---------------------------
+#sendto-countries-modal, #receiver-currency-modal, #sendto-option-modal,
+#sendfrom-bank-modal, #us-state-modal, 
+#sender-BDate-modal, #sender-BMonth-modal , #sender-BYear-modal,
+#trans-purpose-modal{ 
+  .modal-dialog{
+    width: 100%;
+    margin: 0;
+    height: 100%;
+  }
+  .modal-content{
+    border-radius: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    box-shadow: none;
+      border: none;
+  }
+  .modal-header {
+    border: none;
+    .close{
+      color: $white;
+        opacity: .6;
+    }
+  }
+  li{
+    color: $countryDropdownTextColor;
+    list-style: none;
+    height: 35px;
+    line-height: 35px;
+      vertical-align: middle;
+      cursor: pointer;
+    div{
+      float: left;
+    }
+    i{
+      float: left;
+      margin-top: 7px;
+        margin-right: 7px;
+    }
+    &:hover{
+      background-color: $darkGray;
+    }
+  }
+}
+#us-state-modal .modal-dialog{
+  height: auto;
+}
+//--overwrite bootstrap btn color
+.btn{
+  font-size: $btnTextSize;
+  color: $btnTextColor;
+  padding-left: 0;
+}
+.btn.selected{
+  color: $btnSelectedTextColor;
+  font-weight: bold;
+}
+//----popup message box-----------
+.popup-msg-box{
+  margin-top: 10px;
+  width: 100%;
+  padding: 15px;
+  border: 2px solid $popupMsgboxBdColor;
+  background-color: $popupMsgboxBgColor; 
+  line-height: 20px;
+  min-height: 20px;
+  
+  .popup-icon{
+    width: 15%;
+  }
+  .popup-text{
+    width: 85%;
+  }
+  .popup-title{
+    font-weight: bold; 
+    font-size: $popUpTitleTextSize;
+  }
+}
+
+
+
+
+

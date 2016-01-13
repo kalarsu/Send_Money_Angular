@@ -1,0 +1,74 @@
+@import "compass";
+@import "variables-bb.scss";
+
+@mixin zoom($scale){
+	zoom: $scale;
+    -moz-transform: scale($scale);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale($scale);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale($scale);
+    -webkit-transform-origin: 0 0;
+    transform: scale($scale); // Standard Property
+    transform-origin: 0 0;  // Standard Property
+}
+
+//------------icon Sprite--------------------------------------------
+@mixin cssIconLib( $spriteVals ) {
+	width: nth( $spriteVals, 1 );
+	height: nth( $spriteVals, 2 );
+	//background-repeat: no-repeat;
+	//background-image: url( #{ nth( $spriteVals, 3 ) } );
+	background-position: nth( $spriteVals, 4 ) nth( $spriteVals, 5 );
+}
+
+@mixin cssIconSrc($img){
+    background-repeat: no-repeat;
+    background-image: url($img);
+}
+
+$icons-sprite-path: 'images/icons-sprite/icons-sprite.svg';
+$wu-logo: 166px 32px $icons-sprite-path 19px -44px;
+$wu-logo-sm: 166px 32px $icons-sprite-path 14px -40px;
+$arrow-down: 12px 8px $icons-sprite-path -52px -11px;
+$icon-more : 10px 10px $icons-sprite-path -70px -10px;
+$icon-minus : 10px 10px $icons-sprite-path -86px -10px;
+$secure-icon01: 26px 26px $icons-sprite-path -157px -2px;
+$checkbox: 18px 18px $icons-sprite-path -5px -6px;
+$chekbox2: 18px 18px $icons-sprite-path -28px -6px;
+$icon-bank-white: 28px 27px $icons-sprite-path -63px -27px;
+$icon-cash-location: 28px 24px $icons-sprite-path -30px -30px;
+$close-x: 20px 20px $icons-sprite-path -125px -5px;
+$icon-less: 12px 2px $icons-sprite-path -85px -14px;
+$arr-next: 20px 20px $icons-sprite-path -100px -5px;
+$back-arrow: 20px 20px $icons-sprite-path -5px -28px;
+
+//-----------Tooltip--------------------------------------------------
+@mixin positionR($loc){
+    right: $loc; 
+}
+@mixin positionL($loc){
+    left: $loc; 
+}
+
+@mixin tooltipAfter(){
+    position: absolute;
+    top: -11px;
+    right: 100px;
+    display: inline-block;
+    border-right: 26px solid transparent;
+    border-bottom: 12px solid $tooltipArrowColor; 
+    border-left: 26px solid transparent;
+    content: '';
+}
+
+//------border glow---------------------------------------------------
+@mixin borderGlower($pos, $bdColor) {
+    border-#{$pos}: 2px solid transparent;   
+    @include transition(border 0.5s linear, box-shadow 0.5s linear);
+}
+
+@mixin borderGlowerErr($pos, $bdColor) {
+    border-#{$pos}: $bdColor;   
+    @include box-shadow($bdColor 0 0 8px);
+}

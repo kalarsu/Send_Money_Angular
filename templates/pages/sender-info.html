@@ -1,0 +1,131 @@
+
+		<div id="login_page" data-role="content">
+			<div class="top-banner">
+				<a href="javascript:history.back()"><span class="back-arrow icons-lib"></a>
+				</span>Sender
+				<span class="wu-logo-sm float-right"></span>
+			</div>
+			<div class="container-fluid banner-page">  <!-- ng-controller="senderController as senderCrl" -->
+				<form name="form" id="sender-form" method="post" novalidate ng-submit="form.$valid && senderSubmit(form.$valid, $event)">
+					<!-- <input type="hidden" name="birthMonth" value="{{birthMonth}}">
+					<input type="hidden" name="birthDate" value="{{birthDate}}"> -->
+					<div class="row white-row-nb top-progress-bar">
+						<div class="col-xs-3 el-gray-title"><div><a href="#/">Estimate</a></div><div class="active-bar"></div></div>
+						<div class="col-xs-3 el-blue-title"><div><a href="#/sender-info">Sender</a></div><div class="active-step"></div></div>
+						<div class="col-xs-3 el-gray-title">Receiver</div>
+						<div class="col-xs-3 el-gray-title">Review</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<h1 ng-cloak>{{sender_name}}</h1>
+						</div>
+					</div>
+					<div class="row amount-row">
+						<div class="col-xs-6 el-gray-title">
+							Transaction total
+						</div>
+						<div class="col-xs-6 el-text-bold" style="text-align:right" ng-cloak>
+							{{sender_balance}} USD
+						</div>
+					</div>
+					<div class="row spaced-bottom">
+						<div class="col-xs-2">
+							<div class="el-gray-title">From</div>
+						</div>
+						<div class="col-xs-10" style="text-align:right">
+							<div class="el-text-bold" ng-cloak>{{sender_bankName + " " + sender_accNum}}</div>
+						</div>
+					</div>
+					
+					<div style="background-color:white">
+						<div class="row white-row-bb first-row" ng-show="showEdit" id="sender-detail">
+							<div class="col-xs-3 el-brown-title">
+								<div ng-hide="sender_phone==''">Phone</div>
+								<div ng-hide="sender_email==''">Email</div>
+								<div>Address</div>
+							</div>
+							<div class="col-xs-9 el-text-s">
+								<div ng-hide="sender_phone==''" ng-cloak>{{sender_phone}}</div>
+								<div ng-hide="sender_email==''" ng-cloak>{{sender_email}}</div>
+								<div ng-cloak>{{sender_address}}</div>
+							</div>
+							<!-- <div class="col-xs-2 row-border-left"><a href ng-click="showEdit = !showEdit">EDIT</a></div>  -->
+						</div>
+						<div class="row white-row-bb tapfocus" ng-show="sender_phone=='' || showEdit" id="sender-phone-row">
+							<div class="col-xs-12">
+								<div class="phone-countrycode">1-</div>
+								<div class="floating-placeholder {{phoneExist}}">
+									<input ng-model="sender_phone" id="sender-phone" class="tabfocus" name="senderPhone" type="tel" maxlength="12" ng-keyup="senderPhoneKeyup(sender_phone)" autocomplete="off" required> <!--ng-minlength="12"-->
+									<label for="name" ng-cloak>Phone number</label>
+								</div>
+								<div ng-show="form.$submitted" class="err-msg">
+									<!-- <span ng-show="" class="err-text" >Please enter your phone number.</span> -->
+									<span ng-show="(isPhoneErr || form.senderPhone.$error.required)" class="err-text" ng-cloak>{{phoneErrMsg}}</span><!--form.senderPhone.$error.minlength-->
+								</div>
+							</div>
+						</div>
+						
+						<div class="row white-row-bb tapfocus" ng-show="sender_email=='' || showEdit" id="sender-email-row">
+							<div class="col-xs-12">
+								<div class="floating-placeholder floating-placeholder-float {{emailExist}}">
+									<input ng-model="sender_email" id="sender-email" class="tabfocus" name="senderEmail" type="text" ng-keyup="senderEmailKeyup(sender_email)" required autocomplete="off"><!--ng-pattern="pattern"-->
+									<label for="name">Email</label>
+								</div>
+								<div ng-show="form.$submitted || form.senderEmail.$touched" class="err-msg">
+									<!-- <span ng-show="form.senderEmail.$error.required" class="err-text" >Please enter your Email.</span> -->
+									<span ng-hide="isEmail" class="err-text" ng-cloak>{{emailErrMsg}}</span>
+								</div>
+							</div>
+						</div>
+						<div class="row white-row-bb tapfocus" ng-hide="showEdit">
+							<div class="col-xs-12">
+								<div class="floating-placeholder {{addressExist}}">
+									<input ng-model="sender_address" name="senderAddress" class="tabfocus" type="text" required>
+									<label for="name">Address</label>
+								</div>
+								<div ng-show="form.$submitted || form.senderAddress.$touched" class="err-msg">
+									<span ng-show="form.senderAddress.$error.required" class="err-text" ng-cloak>Please enter your address.</span>
+								</div>
+							</div>
+						</div>
+						<div class="row white-row-bb end-row sender-birth tapfocus" ng-click="senderBirthKeyup()">
+							<div class="col-xs-4">
+								<div class="el-brown-title">Date of birth</div>
+							</div>
+							<div class="col-xs-8 birthday">
+								<div class="birthday-col">
+									<div class="floating-placeholder floating-placeholder-float">
+										<input type="tel" ng-model="sender_birth_month" name="birthMonth" class="tabfocus" ng-keyup="valdateMonth(sender_birth_month)" maxlength="2" class="{{monthColor}}" id="monthInput" autocomplete="off" required>
+										<label for="name">MM</label>
+									</div>
+								</div>
+								<div class="birthday-col">
+									<div class="floating-placeholder  floating-placeholder-float">
+										<input ng-model="sender_birth_day" name="birthDay" ng-keyup="valdateDay(sender_birth_day)" type="tel" value="" maxlength="2" class="{{dayColor}}" id="dayInput" autocomplete="off" required>
+										<label for="name">DD</label>
+									</div>
+								</div>
+								<div class="birthday-col">	
+									<div class="floating-placeholder  floating-placeholder-float">
+										<input ng-model="sender_birth_year" name="birthYear" ng-keyup="valdateYear(sender_birth_year)" type="tel" value="" maxlength="4" class="{{yearColor}}" id="yearInput" autocomplete="off" required>
+										<label for="name">YYYY</label>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 err-msg" ng-show="form.$submitted || form.birthMonth.$touched || form.birthDay.$touched || form.birthYear.$touched">
+								<span ng-show="form.$submitted && (form.birthMonth.$error.required || form.birthDay.$error.required || form.birthYear.$error.required)" class="err-text">Please enter DOB.</span>
+								<span ng-show="isbirthErr" class="err-text" ng-cloak>{{birthErrMsg}}</span>
+							</div>
+							<!-- <div class="col-xs-12 err-msg" ng-show="form.birthMonth.$touched || form.birthDay.$touched || form.birthYear.$touched">
+								<span ng-show="isbirthErr" class="err-text">{{birthErrMsg}}</span>
+							</div> -->
+						</div>
+					</div>
+					<div class="row" id="login-submit-btn-row">
+						<input type="submit" class="full-width-btn button" value="Add Receiver" ng-disabled="disableSubmitBtn">
+					</div> 
+				</form>
+			</div>						
+		</div>
+		
+

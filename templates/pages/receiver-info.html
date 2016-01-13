@@ -1,0 +1,236 @@
+
+
+	<div id="login_page" data-role="content" >  <!-- ng-app="receiverApp" ng-controller="receiverController as receiverCrl" -->
+		<div class="top-banner">
+			<a href="javascript:history.back()">
+			<span class="back-arrow icons-lib"></span></a>Receiver Information
+			<span class="wu-logo-sm float-right"></span>
+		</div>
+		<form name="form" id="receiver-form" method="post" novalidate ng-submit="form.$valid && receiverSubmit(form.$valid, $event)">
+			<div class="container-fluid banner-page" id="receiver-info-container" >
+				<div class="row white-row-nb top-progress-bar">
+					<div class="col-xs-3 el-gray-title"><div><a href="#/">Estimate</a></div><div class="active-bar"></div></div>
+					<div class="col-xs-3 el-gray-title"><div><a href="#/sender-info">Sender</a></div><div class="active-bar"></div></div>
+					<div class="col-xs-3 el-blue-title"><div><a href="#/receiver-info">Receiver</a></div><div class="active-step"></div></div>
+					<div class="col-xs-3 el-gray-title">Review</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<h1><div id="senderName">Giltbert Damjan</div></h1>
+					</div>
+				</div>
+				<div class="row amount-row">
+					<div class="col-xs-6 el-gray-title">
+						Transaction total
+					</div>
+					<div class="col-xs-6 el-text-bold" id="sendAmount" style="text-align:right" ng-cloak>
+						{{sender_balance}} USD
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-2">
+						<div class="el-gray-title">From</div>
+					</div>
+					<div class="col-xs-10" style="text-align:right">
+						<div class="el-text-bold" id="bankName" ng-cloak>{{sender_bankName + " " + sender_accNum}}</div>
+					</div>
+				</div>
+		<!-- 		<div class="row">
+					<div class="col-xs-12">
+						<a href>Show more</a>
+					</div>
+				</div> -->
+				<div class="row">
+					<div class="col-xs-12">
+						<h1>Receiver Information</h1>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<h2>Receiver's personal information</h2>
+					</div>
+				</div>
+				<div class="row white-row-bb first-row tapfocus row-border-focus" id="fname-row" ng-show="{{isReceFname}}">
+					<div class="col-xs-12">
+						<div class="floating-placeholder floating-placeholder-float">
+							<input ng-model="receiverFname" name="receiverFname" id="receiver-fname" class="inputEle tabfocus" ng-pattern="pattern" type="text" autocomplete="off" required>
+							<label for="name">Receiver's first name</label>
+						</div>
+						<div ng-show="form.$submitted || form.receiverFname.$touched" class="err-msg">
+							<span ng-show="form.receiverFname.$error.required" class="err-text">Please enter first name</span>
+							<span ng-show="form.receiverFname.$error.pattern" class="err-text">Please enter a valid first name.</span>
+						</div>
+					</div>
+				</div>
+				<div class="row white-row-bb tapfocus" ng-show="{{isReceLname}}" id="lname-row">
+					<div class="col-xs-12">
+						<div class="floating-placeholder floating-placeholder-float">
+							<input ng-model="receiverLname" name="receiverLname" id="receiver-lname" class="inputEle tabfocus" ng-pattern="pattern" type="text" ng-required="isReceLname" autocomplete="off">
+							<label for="name">Receiver's last name</label>
+						</div>
+						<div ng-show="form.$submitted || form.receiverLname.$touched" class="err-msg">
+							<span ng-show="form.receiverLname.$error.required" class="err-text">Please enter last name</span>
+							<span ng-show="form.receiverLname.$error.pattern" class="err-text">Please enter a valid last name.</span>
+						</div>
+					</div>
+				</div>
+				<div class="row white-row-bb tapfocus" ng-show="{{isRecePaternal}}" id="paternal-row">
+					<div class="col-xs-12">
+						<div class="floating-placeholder floating-placeholder-float">
+							<input ng-model="receiverPaternal" name="receiverPaternal" id="receiver-paternal" class="inputEle tabfocus" ng-pattern="pattern" type="text" ng-required="isRecePaternal" autocomplete="off">
+							<label for="name">Receiver's paternal name</label>
+						</div>
+						<div ng-show="form.$submitted || form.receiverPaternal.$touched" class="err-msg">
+							<span ng-show="form.receiverPaternal.$error.required" class="err-text">Please enter paternal name</span>
+							<span ng-show="form.receiverPaternal.$error.pattern" class="err-text">Please enter a valid paternal name.</span>
+						</div>
+					</div>
+				</div>
+				<div class="row white-row-bb tapfocus" ng-show="{{isReceCity}}" id="city-row">
+					<div class="col-xs-12">
+						<div class="floating-placeholder floating-placeholder-float">
+							<input ng-model="receiverCity" name="receiverCity" id="receiver-city" class="inputEle tabfocus" type="text" ng-pattern="pattern" ng-required="isReceCity" autocomplete="off">
+							<label for="name">Receiver's city</label>
+						</div>
+						<div ng-show="form.$submitted || form.receiverCity.$touched" class="err-msg">
+							<span ng-show="form.receiverCity.$error.required" class="err-text" >Please enter Receiver's city</span>
+							<span ng-show="form.receiverCity.$error.pattern" class="err-text">Please enter a valid city.</span>
+						</div>
+					</div>
+				</div>
+				<div class="row white-row-bb tapfocus" ng-show="{{isReceUState}}" id="UState-row">
+					<div class="col-xs-12">
+						<div class="dorpdown-container arrow-middle">
+							<input ng-model="receiverUSState" name="USState" type="hidden" ng-required="isReceUState">
+							<button type="button" name="receiverUSStateBtn" class="btn dropdown tabfocus" data-toggle="modal" value="" data-target="#us-state-modal" ng-cloak>
+							{{selectedState}}</button>
+							<span class="icons-lib icon-arrow-down"></span>
+						</div>
+						<div ng-show="form.$submitted || form.receiverUSStateBtn.$touched" class="err-msg">
+							<span ng-show="form.USState.$error.required" class="err-text" ng-cloak>Please select state</span>
+						</div>
+					</div>
+				</div>
+				<div class="row white-row-bb tapfocus" ng-show="{{isReceState}}" id="state-row">
+					<div class="col-xs-12">
+						<div class="floating-placeholder floating-placeholder-float">
+							<input ng-model="receiverState" name="receiverState" id="receiver-state" class="inputEle tabfocus" type="text" ng-pattern="pattern" ng-required="isReceState" autocomplete="off">
+							<label for="name">Receiver's state</label>
+						</div>
+						<div ng-show="form.$submitted || form.receiverState.$touched" class="err-msg">
+							<span ng-show="form.receiverState.$error.required" class="err-text" >Please enter Receiver's state</span>
+							<span ng-show="form.receiverState.$error.pattern" class="err-text">Please enter a valid state.</span>
+						</div>
+					</div>
+				</div>
+				<div class="row white-row-bb tapfocus" ng-show="{{isRecePhone}}" id="phone-row">
+					<div class="col-xs-12">
+						<div class="floating-placeholder floating-placeholder-float">
+							<input ng-model="receiverPhone" name="receiverPhone" id="receiver-phone" class="inputEle tabfocus" type="text" ng-required="isRecePhone" autocomplete="off">
+							<label for="name">Receiver's phone number</label>
+						</div>
+						<div ng-show="form.$submitted || form.receiverPhone.$touched" class="err-msg">
+							<span ng-show="form.receiverPhone.$error.required" class="err-text" >Please enter Receiver's phone number</span>
+						</div>
+					</div>
+				</div>
+				<div class="row white-row-bb tapfocus" ng-show="{{isReceTxnPurpos}}" id="trans-purpose">
+					<div class="col-xs-12">
+						<div>
+							<div class="dorpdown-container arrow-middle" data-toggle="modal" data-target="#trans-purpose-modal">
+								<input ng-model="receiverPurpose" name="receiverTranspurpose" id="receiver-transpur" class="inputEle" type="hidden" ng-required="isReceTxnPurpos">
+								<div class="el-brown-title" ng-show="transPurpose != 'Transaction purpose' ? true : false">Transaction purpose</div>
+								<button type="button" name="receiverTranspurposeBtn" value="{{transPurpose}}" class="btn dropdown tabfocus {{isTransPurSelected}}" ng-cloak>{{transPurpose}}</button>
+								<span class="icons-lib icon-arrow-down"></span>
+							</div>		
+						</div>
+						<div ng-show="form.$submitted || form.receiverTranspurposeBtn.$touched" class="err-msg">
+							<span ng-show="form.receiverTranspurpose.$error.required" class="err-text" ng-cloak>Please enter transaction purpose</span>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="row end-row">
+					<div class="col-xs-12"></div>
+				</div> -->
+
+				<div class="row spaced-top" ng-show="{{deliverMethod=='D2B'}}">
+					<div class="col-xs-12">
+						<h2>Receiver's bank account</h2>
+					</div>
+				</div>
+				<div class="row white-row-bb tapfocus" ng-show="{{isReceBank}}" id="bankname-row">
+					<div class="col-xs-12">
+						<div class="floating-placeholder floating-placeholder-float">
+							<input ng-model="receiverBankname" name="bankName" id="receiver-bankname" class="inputEle tabfocus" ng-pattern="pattern" type="text" ng-required="isReceBank" autocomplete="off">
+							<label for="name">Bank Name</label>
+						</div>
+						<div ng-show="form.$submitted || form.bankName.$touched" class="err-msg">
+							<span ng-show="form.bankName.$error.required" class="err-text" >Please enter bank name</span>
+							<span ng-show="form.bankName.$error.pattern" class="err-text">Please enter a valid bank.</span>
+						</div>
+					</div>
+				</div>
+				<div class="row white-row-bb tapfocus" ng-show="{{isReceBankRout}}" id="routing-row">
+					<div class="col-xs-12">
+						<div class="floating-placeholder floating-placeholder-float">
+							<input ng-model="receiverBankRouting" name="bankRouting" id="receiver-bank-rout" class="inputEle tabfocus" ng-pattern="/^[a-zA-Z0-9]*$/" type="text" ng-required="isReceBankRout" autocomplete="off">
+							<label for="name">Routing nunber</label>
+						</div>
+						<div ng-show="form.$submitted || form.bankRouting.$touched" class="err-msg">
+							<span ng-show="form.bankRouting.$error.required" class="err-text" >Please enter routing nunber</span>
+							<span ng-show="form.bankRouting.$error.pattern" class="err-text">Please enter a valid routing nunber.</span>
+						</div>
+					</div>
+				</div>
+				<div class="row white-row-bb end-row tapfocus" ng-show="{{isReceBankAcc}}" id="bank-account-row">
+					<div class="col-xs-12">
+						<div class="floating-placeholder floating-placeholder-float">
+							<input ng-model="receiverBankAccount" name="bankAccount" id="receiver-bank-account" class="inputEle tabfocus" ng-pattern="/^[a-zA-Z0-9]*$/" type="text" ng-required="isReceBankAcc" autocomplete="off">
+							<label for="name">Account number</label>
+						</div>
+						<div ng-show="form.$submitted || form.bankAccount.$touched" class="err-msg">
+							<span ng-show="form.bankAccount.$error.required" class="err-text" >Please enter account number</span>
+							<span ng-show="form.bankAccount.$error.pattern" class="err-text">Please enter a valid account nunber.</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="row" id="login-submit-btn-row">
+					<input name="submitBtn" type="submit" class="full-width-btn button" value="Proceed to review"  autocomplete="off">  
+					<!--ng-click="receiverSubmit(form.$valid)" onClick="window.location='review.html'" -->
+				</div> 
+			</div>
+			<!-- US States dropdown Modal start-->
+			<div class="modal fade" id="us-state-modal" role="dialog">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+						  <button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+						  <ul>
+						  	<li data-dismiss="modal" ng-repeat="(stateCode,state) in usStates" ng-click="updateState(state)" ng-cloak>{{state}}</li>
+						  </ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+		<!-- Transaction purpose Modal start-->
+			<div class="modal fade" id="trans-purpose-modal" role="dialog">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+						  <button type="button" class="close" data-dismiss="modal"><div class="icons-lib icon-close"></div></button>
+						</div>
+						<div class="modal-body">
+							<ul>
+							  <li ng-repeat="purpuse in trans_purposes" ng-click="setTransPur(purpuse)" data-dismiss="modal" ng-cloak>{{purpuse}}</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+	
+

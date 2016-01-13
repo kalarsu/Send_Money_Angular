@@ -1,0 +1,4 @@
+/* line 3, ../sass/review.scss */
+#review-container .col-xs-1, #review-container .col-xs-10, #review-container .col-xs-11, #review-container .col-xs-12, #review-container .col-xs-2, #review-container .col-xs-3, #review-container .col-xs-4, #review-container .col-xs-5, #review-container .col-xs-6, #review-container .col-xs-7, #review-container .col-xs-8, #review-container .col-xs-9 {
+  padding-right: 8px;
+}

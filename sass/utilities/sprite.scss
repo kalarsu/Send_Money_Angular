@@ -1,0 +1,86 @@
+@import "utilities/application.scss";
+//-----Country drop down with Flag----------------
+
+.flag {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+.flag-icon {
+    display: inline-block;
+    width: 31px;
+    height: 24px;
+    background: url(images/countryflags.png) no-repeat;
+    @include zoom(0.9);
+
+    &.US {
+	    background-position: 0px -1px
+	}
+	&.MX {
+	    background-position: -257px -193px;
+	}
+	&.CN {
+	    background-position: -65px -241px;
+	}
+	&.IN {
+	    background-position: -193px -25px;
+	}
+	&.PH {
+	    background-position: -321px -145px;
+	}
+	&.None {
+	    background: none;
+	}
+}
+
+//-----dropdown arrow------------------------------------
+
+.dropdown-arrow{
+	background: url('images/arrow-down.svg') no-repeat;
+	background-position: 0px 0px;
+	width: 12px;
+	height: 8px;
+	position: absolute;
+	margin-top: 16px;
+	right: 10px;
+}
+
+//-------home page ---------------------------------------
+.icons-lib{
+	@include cssIconSrc('images/icons-sprite/icons-sprite.svg');
+}
+.icon-lock{
+	float: right;
+	margin-right: 19px;
+	@include cssIconLib($secure-icon01);
+}
+.icon-bank{
+	@include cssIconLib($icon-bank-white);
+}
+.icon-agent{
+	@include cssIconLib($icon-cash-location);
+}
+.icon-arrow-next{ 
+	@include cssIconLib($arr-next);
+}
+.icon-close{
+	@include cssIconLib($close-x);
+}
+.icon-more{
+	float: right;
+	@include cssIconLib($icon-more);
+}
+.icon-minus{
+	float: right;
+	@include cssIconLib($icon-minus);
+}
+.icon-arrow-down{
+	float: right;
+	position: absolute;
+    right: 11px;
+	@include cssIconLib($arrow-down);
+}
+
+
+

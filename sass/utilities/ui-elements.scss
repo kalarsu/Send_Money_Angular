@@ -1,0 +1,309 @@
+@import "utilities/application.scss";
+
+//----------Top Banner Bar-------------------------------------
+.top-banner{ 
+	height: 40px;
+	line-height: 40px;
+	width: 100%;
+	background-color: $headerBannerColor;
+	text-align: center;
+	text-indent: 45px;
+	font-size: 16px;
+	color: $headerBannerTextColor;
+	font-weight: bold;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	.back-arrow{
+		float: left;
+  		margin: 10px 0 0 10px;
+		@include cssIconLib($back-arrow);
+	}
+}
+.banner-page{
+	margin-top: 40px;
+}
+//----------Row with margin------------------------------------
+.row.spaced-top{
+	margin-top: 3px;
+}
+.row.spaced-bottom{
+	margin-bottom: 10px;
+}
+.row.spaced-row{
+	margin-top: 17px;
+	margin-bottom: 10px;
+}
+//----------white row------------------------------
+.white-row{
+	background-color: $rowBgColor;
+	padding: 8px 0;
+	min-height: 57px;
+	line-height: 37px;
+	border-top: 2px solid $rowBorderColor;
+	&.err{
+		border-top: 1px solid $errBorderColor;
+		box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05) inset, 0px 0px 3px $errBorderColor;
+		border-bottom: 1px solid $errBorderColor; 
+	}
+}
+.white-row-bb{
+	background-color: $rowBgColor;
+	padding: 10px 0;
+	min-height: 57px;
+	line-height: 37px;
+	border-bottom: 2px solid $rowBorderColor;
+	&.err{
+		border-top: 1px solid $errBorderColor;
+		box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05) inset, 0px 0px 3px $errBorderColor;
+		border-bottom: 1px solid $errBorderColor; 
+	}
+}
+.white-row-nb{
+	background-color: $rowBgColor;
+}
+.white-row-spacing{
+	background-color: $rowBgColor;
+	border-bottom: 2px solid $rowBorderColor;
+	height: 6px;
+}
+.end-row{
+	border-bottom: 2px solid $rowBorderColor;
+}
+.first-row{
+	border-top: 2px solid $rowBorderColor;
+}
+.row-border-left{
+	border-left: 2px solid $rowBorderColor;
+}
+
+.row-border-top-focus{
+	border-top: 2px solid $focusBorderColor;
+}
+
+.row-border-bottom-focus{
+	border-bottom: 2px solid $focusBorderColor;
+}
+
+.row-border-focus{
+	border-top: 1px solid $focusBorderColor;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05) inset, 0px 0px 8px $focusBorderShadowColor;
+	border-bottom: 1px solid $focusBorderColor; 
+	margin-bottom: 2px;
+	margin-top: -2px;
+}
+
+//----------Lines----------------------------------
+.el-hr{
+	height: 2px;
+	text-align: left;
+	margin-top: 5px;
+	margin-bottom: 0px;
+	background-color: $underlineColor;
+	&.focus{
+		background-color: $underLineFocusColor;
+	}
+	&.err{
+		background-color: $underLineErrColor; 
+	}
+}
+
+//----------Titles---------------------------------
+.el-brown-title{
+	color: $elTitleColor;
+	font-size: $elTitleSize;
+	height: 20px;
+  	line-height: 20px;
+}
+.el-brown-text{
+	color: $elTitleColor;
+	font-size: $elTextSize;
+	font-weight: bold;
+	height: 20px;
+  	line-height: 20px;
+}
+.el-blue-title{
+	color: $progressActiveTextColor;
+	font-size: $elSubTitleTextSize;
+	font-weight: bold;
+}
+.el-gray-title{
+	color: $elSubTitleColor;
+	font-size: $elSubTitleTextSize;
+}
+.el-text, .el-text-bold{
+	font-size: $elSubTolDataTextSize;
+}
+.el-text-bold{
+	font-weight: bold;
+}
+.el-gray-title-s{
+	color: $elSubTitleColor;
+	font-size: $elSubTitleTextSize_s;
+	font-weight: bold;
+	letter-spacing: -0.4px;
+	div{
+		height: 20px;
+		line-height: 20px;
+		margin-bottom: 5px;
+	}
+}
+.el-text-s{
+	font-size: $elSubTolDataTextSize_s;
+	letter-spacing: -0.4px;
+	text-align: right;
+	div{
+		height: 20px;
+		line-height: 20px;
+	}
+}
+
+.amount-row{
+	.el-text{
+		text-align: right;
+	}
+}
+.err-text{
+	color: $errTextColor;
+}
+.err-msg{
+	clear: both;
+	line-height: 10px; 
+}
+//-------------legal statement ---------------------
+.legal-statement{
+	font-size: $legalTextSize;
+	color: $legalTextColor; 
+	ul{
+		margin-left: -28px; 
+	}
+	li{
+		list-style: none;
+		margin-bottom: 5px;
+		sup{
+		  text-indent: -10px;
+		  position: relative;
+		  top: 7px;
+		  float: left;
+		}
+		&.check-box{
+			height: 10px;
+			position: relative;
+			left: -18px;
+			margin-top: -14px;
+		}
+	}
+}
+//-------------disclamier----------------------------
+.disclaimer-row{
+	margin-top: 25px;
+	border: 1px solid $white;
+	padding: 8px 0;
+	.disclamier-title{
+		float: left;
+	}
+	.icons-lib{
+		float: right;
+		margin-top: 6px;
+	}
+	.legal-statement{
+		margin-top: 15px;
+	}
+}
+//------Terms condition and Privaccy statement--------
+.terms{
+	color: $termsTextColor;
+	font-size: $termsTextSize;
+}
+.terms-title, .privacy-title{
+	font-size: $termsTitleSize;
+	color: $termsTitleColor;
+	margin: 13px 0 10px;
+} 
+
+#privacy-container{
+	color: $termsTextColor;
+	font-size: $termsTextSize;
+}
+
+//------Footer-----------------------------------------
+footer{
+	margin: 25px 0;
+	font-size: $footerGrayTextSize;
+	text-align: center;
+	color: $footerGrayTextColor;
+	a{
+		font-size: $footerGrayTextSize;
+	}
+	.footer-row{
+		margin: 5px 0;
+	}
+}
+//-------column on focus--------------------------------
+
+.col-xs-12, .col-xs-6{
+	&.err{
+		@include borderGlowerErr(bottom, $errBorderColor); 
+	}
+	&.focus{
+		@include borderGlowerErr(bottom, $focusBorderColor);
+	}
+}
+
+//----------hide element--------------------------------
+.hide-element{
+	height: 0;
+	@include transition(height, 0.5s linear)
+}
+
+//Progress bar------------------------------
+//for extend------
+.active-blue-bar{
+	height: 4px;
+	background-color: $underLineFocusColor;
+	margin-left: -15px;
+	margin-right: -15px;
+	margin-top: -5px;
+	position: relative;
+}
+.top-progress-bar{
+	height: 30px;
+  	line-height: 30px;
+  	border-bottom: 2px solid $underLineFocusColor;
+  	.el-blue-title, .el-gray-title{
+  		text-align: center;
+  	}
+  	.active-step{
+		@extend .active-blue-bar;
+  		&:before{
+			position: absolute;
+			top: -3px;
+			display: inline-block;
+			border-right: 6px solid transparent;
+			border-bottom: 4px solid #0A82A9;
+			border-left: 6px solid transparent;
+			content: '';
+			left: 45%;
+		}
+  	}
+  	.active-bar{
+  		@extend .active-blue-bar;
+  	}
+}
+
+//.animate-focus{
+  //background: #0A82A9;
+  //height: 3px;
+  //display: inline-block;
+  //-webkit-animation: animate-focus 1.5s ease forwards 2s;
+  //width: 70%;
+//}
+
+//@-webkit-keyframes animate-focus {
+  //  from { width: 0%; }
+    //to { width: 100%; }
+//}
+
+
+

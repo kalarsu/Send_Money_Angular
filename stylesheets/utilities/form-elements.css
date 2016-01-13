@@ -1,0 +1,165 @@
+/* line 4, ../../sass/utilities/form-elements.scss */
+.dropdown {
+  background: none #FFFFFF;
+}
+/* line 6, ../../sass/utilities/form-elements.scss */
+.dropdown:hover {
+  background: none #FFFFFF;
+}
+
+/* line 10, ../../sass/utilities/form-elements.scss */
+.dorpdown-container {
+  height: 38px;
+}
+/* line 12, ../../sass/utilities/form-elements.scss */
+.dorpdown-container .el-brown-title {
+  height: 16px;
+  line-height: 16px;
+}
+
+/* line 19, ../../sass/utilities/form-elements.scss */
+.full-width-btn {
+  margin-top: 25px;
+  width: 100%;
+  height: 45px;
+  border: 0;
+  display: block;
+  background: #0A82A9;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-webkit-appearance: none;
+  -ms-webkit-appearance: none;
+  -o-webkit-appearance: none;
+  webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  color: #FFFFFF;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 700;
+  text-shadow: none;
+}
+
+/* line 41, ../../sass/utilities/form-elements.scss */
+button:hover {
+  background: #8B9FA9;
+  text-decoration: none;
+}
+
+/* line 46, ../../sass/utilities/form-elements.scss */
+input[type="submit"]:disabled {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+}
+
+/* line 55, ../../sass/utilities/form-elements.scss */
+#sendto-countries-modal .modal-dialog, #receiver-currency-modal .modal-dialog, #sendto-option-modal .modal-dialog,
+#sendfrom-bank-modal .modal-dialog, #us-state-modal .modal-dialog,
+#sender-BDate-modal .modal-dialog, #sender-BMonth-modal .modal-dialog, #sender-BYear-modal .modal-dialog,
+#trans-purpose-modal .modal-dialog {
+  width: 100%;
+  margin: 0;
+  height: 100%;
+}
+/* line 60, ../../sass/utilities/form-elements.scss */
+#sendto-countries-modal .modal-content, #receiver-currency-modal .modal-content, #sendto-option-modal .modal-content,
+#sendfrom-bank-modal .modal-content, #us-state-modal .modal-content,
+#sender-BDate-modal .modal-content, #sender-BMonth-modal .modal-content, #sender-BYear-modal .modal-content,
+#trans-purpose-modal .modal-content {
+  border-radius: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  box-shadow: none;
+  border: none;
+}
+/* line 67, ../../sass/utilities/form-elements.scss */
+#sendto-countries-modal .modal-header, #receiver-currency-modal .modal-header, #sendto-option-modal .modal-header,
+#sendfrom-bank-modal .modal-header, #us-state-modal .modal-header,
+#sender-BDate-modal .modal-header, #sender-BMonth-modal .modal-header, #sender-BYear-modal .modal-header,
+#trans-purpose-modal .modal-header {
+  border: none;
+}
+/* line 69, ../../sass/utilities/form-elements.scss */
+#sendto-countries-modal .modal-header .close, #receiver-currency-modal .modal-header .close, #sendto-option-modal .modal-header .close,
+#sendfrom-bank-modal .modal-header .close, #us-state-modal .modal-header .close,
+#sender-BDate-modal .modal-header .close, #sender-BMonth-modal .modal-header .close, #sender-BYear-modal .modal-header .close,
+#trans-purpose-modal .modal-header .close {
+  color: #FFFFFF;
+  opacity: .6;
+}
+/* line 74, ../../sass/utilities/form-elements.scss */
+#sendto-countries-modal li, #receiver-currency-modal li, #sendto-option-modal li,
+#sendfrom-bank-modal li, #us-state-modal li,
+#sender-BDate-modal li, #sender-BMonth-modal li, #sender-BYear-modal li,
+#trans-purpose-modal li {
+  color: #FFFFFF;
+  list-style: none;
+  height: 35px;
+  line-height: 35px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+/* line 81, ../../sass/utilities/form-elements.scss */
+#sendto-countries-modal li div, #receiver-currency-modal li div, #sendto-option-modal li div,
+#sendfrom-bank-modal li div, #us-state-modal li div,
+#sender-BDate-modal li div, #sender-BMonth-modal li div, #sender-BYear-modal li div,
+#trans-purpose-modal li div {
+  float: left;
+}
+/* line 84, ../../sass/utilities/form-elements.scss */
+#sendto-countries-modal li i, #receiver-currency-modal li i, #sendto-option-modal li i,
+#sendfrom-bank-modal li i, #us-state-modal li i,
+#sender-BDate-modal li i, #sender-BMonth-modal li i, #sender-BYear-modal li i,
+#trans-purpose-modal li i {
+  float: left;
+  margin-top: 7px;
+  margin-right: 7px;
+}
+/* line 89, ../../sass/utilities/form-elements.scss */
+#sendto-countries-modal li:hover, #receiver-currency-modal li:hover, #sendto-option-modal li:hover,
+#sendfrom-bank-modal li:hover, #us-state-modal li:hover,
+#sender-BDate-modal li:hover, #sender-BMonth-modal li:hover, #sender-BYear-modal li:hover,
+#trans-purpose-modal li:hover {
+  background-color: #44433D;
+}
+
+/* line 94, ../../sass/utilities/form-elements.scss */
+#us-state-modal .modal-dialog {
+  height: auto;
+}
+
+/* line 98, ../../sass/utilities/form-elements.scss */
+.btn {
+  font-size: 15px;
+  color: #929497;
+  padding-left: 0;
+}
+
+/* line 103, ../../sass/utilities/form-elements.scss */
+.btn.selected {
+  color: #44433D;
+  font-weight: bold;
+}
+
+/* line 108, ../../sass/utilities/form-elements.scss */
+.popup-msg-box {
+  margin-top: 10px;
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #1599BA;
+  background-color: rgba(10, 130, 169, 0.7);
+  line-height: 20px;
+  min-height: 20px;
+}
+/* line 117, ../../sass/utilities/form-elements.scss */
+.popup-msg-box .popup-icon {
+  width: 15%;
+}
+/* line 120, ../../sass/utilities/form-elements.scss */
+.popup-msg-box .popup-text {
+  width: 85%;
+}
+/* line 123, ../../sass/utilities/form-elements.scss */
+.popup-msg-box .popup-title {
+  font-weight: bold;
+  font-size: 16px;
+}

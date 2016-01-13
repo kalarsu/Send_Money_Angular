@@ -1,0 +1,20 @@
+/* line 5, ../sass/receiver-info.scss */
+#receiver-info-container .sending-amount .el-text {
+  height: 20px;
+  line-height: 20px;
+}
+
+/* line 12, ../sass/receiver-info.scss */
+#trans-purpose-modal ul {
+  width: 199px;
+}
+
+/* line 17, ../sass/receiver-info.scss */
+.dorpdown-container.arrow-middle .icon-arrow-down {
+  top: 19px;
+}
+
+/* line 23, ../sass/receiver-info.scss */
+#trans-purpose .btn {
+  margin-top: -10px;
+}

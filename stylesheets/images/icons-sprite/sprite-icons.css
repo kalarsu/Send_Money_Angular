@@ -1,0 +1,19 @@
+@mixin cssSprite( $spriteVals ) {
+	width: nth( $spriteVals, 1 );
+	height: nth( $spriteVals, 2 );
+	background-repeat: no-repeat;
+	background-image: url( #{ nth( $spriteVals, 3 ) } );
+	background-position: nth( $spriteVals, 4 ) nth( $spriteVals, 5 );
+}
+$icons-sprite-path: '../img/icons-sprite.png';
+$wu-logo: 166px 32px $icons-sprite-path -5px -65px;
+$arrow-down: 12px 8px $icons-sprite-path -52px -11px;
+$icon-more +: 10px 10px $icons-sprite-path -70px -10px;
+$secure-icon01: 32px 32px $icons-sprite-path -158px -3px;
+$checkbox: 18px 18px $icons-sprite-path -5px -6px;
+$chekbox2: 18px 18px $icons-sprite-path -28px -6px;
+$close-x: 20px 20px $icons-sprite-path -125px -5px;
+$icon-less: 12px 2px $icons-sprite-path -85px -14px;
+$arr-next: 20px 20px $icons-sprite-path -100px -5px;
+$back-arrow: 20px 20px $icons-sprite-path -5px -28px;
+$close-x: 20px 20px $icons-sprite-path 309px 30px;

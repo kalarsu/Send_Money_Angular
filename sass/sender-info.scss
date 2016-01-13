@@ -1,0 +1,70 @@
+@import "utilities/application.scss";
+
+#sender-detail{
+	overflow: hidden;
+	//position: relative;
+	height: 100px;
+	.row-border-left{
+		height: 100%;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	.el-brown-title div, .el-text-s div{
+		height: 20px;
+  		line-height: 20px; 
+	}
+}
+
+.sender-birth{
+	.btn{
+		padding-left: 0;
+	}
+	.el-brown-title{
+		padding-top: 3px;
+	}
+	.birthday{
+		.birthday-col{
+			width:33.3%;
+			float:left;
+			padding-left: 15px;
+		}
+		.errText{
+			color: $errTextColor;
+		}
+		.correctText{
+			color: $inputTextColor; 
+		}
+	}
+	//.err-msg{
+		//line-height: 12px;
+	//}
+}
+
+#sender-BDate-modal{ 
+	.modal-dialog{
+		height: auto;
+	}
+}
+
+#sender-BDate-modal, #sender-BMonth-modal, #sender-BYear-modal{
+	li{
+		text-align: center;
+	}
+}
+
+#sender-phone-row{
+	.phone-countrycode{
+		float: left;
+	    margin-right: 5px;
+	    padding-top: 12px;
+	    height: 40px; 
+	}
+	.floating-placeholder{
+		width: 90%;
+		label{
+			margin-left: -15px;
+		}
+	}
+}
+

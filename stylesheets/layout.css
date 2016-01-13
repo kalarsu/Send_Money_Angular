@@ -1,0 +1,519 @@
+/* line 4, ../sass/home.scss */
+.page-container {
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* line 10, ../sass/home.scss */
+.header-img {
+  margin-top: 40px;
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  height: 48%;
+  border: none;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+/* line 18, ../sass/home.scss */
+.header-img.hide-element {
+  height: 0;
+  min-height: 0;
+  overflow: hidden;
+  -moz-transition: height, ease-out 1s;
+  -o-transition: height, ease-out 1s;
+  -webkit-transition: height, ease-out 1s;
+  transition: height, ease-out 1s;
+}
+
+/* line 25, ../sass/home.scss */
+#hero-bg {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: auto;
+  -moz-transition: opacity 0.5s ease-out;
+  -o-transition: opacity 0.5s ease-out;
+  -webkit-transition: opacity 0.5s ease-out;
+  transition: opacity 0.5s ease-out;
+  -moz-transform: translate3d(0px, 0px, 0px);
+  -ms-transform: translate3d(0px, 0px, 0px);
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  transform: translate3d(0px, 0px, 0px);
+  background-image: url("images/HomePage-hikers@2x.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* line 40, ../sass/home.scss */
+#home-tagline {
+  font-size: 28px;
+  color: #000000;
+  width: 100%;
+  padding: 0 15px;
+  line-height: 30px;
+  margin-top: 30px;
+}
+
+/* line 48, ../sass/home.scss */
+#home-logo {
+  width: 166px;
+  height: 32px;
+  background-position: 19px -44px;
+  margin: 5px auto;
+  background-size: 90%;
+}
+
+/* line 53, ../sass/home.scss */
+.wu-logo-sm {
+  background: url("images/wulogo-sml.svg") no-repeat;
+  height: 30px;
+  width: 74px;
+  background-size: 80%;
+}
+/* line 58, ../sass/home.scss */
+.wu-logo-sm.home {
+  margin: 8px auto;
+}
+/* line 61, ../sass/home.scss */
+.wu-logo-sm.float-right {
+  float: right;
+  margin-top: 8px;
+  margin-right: -12px;
+}
+
+/* line 68, ../sass/home.scss */
+#home-page-container {
+  min-height: 525px;
+}
+
+/* line 73, ../sass/home.scss */
+.midSizeGrayText, #send-amount-row .sendfrom-currency, #send-amount-row .select-dropdown.currency .btn, .lrgSizeGrayText {
+  color: #929497;
+}
+
+/* line 76, ../sass/home.scss */
+.lrgSizeDarkGrayText, #select-country-row .country-name {
+  color: #44433D;
+}
+
+/* line 79, ../sass/home.scss */
+.midSizeGrayText, #send-amount-row .sendfrom-currency, #send-amount-row .select-dropdown.currency .btn {
+  font-size: 14px;
+}
+
+/* line 82, ../sass/home.scss */
+.lrgSizeGrayText, .lrgSizeDarkGrayText, #select-country-row .country-name {
+  font-size: 15px;
+}
+
+/* line 88, ../sass/home.scss */
+#sendfrom-title .send-from {
+  border-top: 2px solid #C7C7CC;
+  border-right: 2px solid #C7C7CC;
+  padding-left: 45px;
+}
+/* line 93, ../sass/home.scss */
+#sendfrom-title .send-to {
+  border-top: 2px solid #C7C7CC;
+  padding-left: 32px;
+}
+/* line 97, ../sass/home.scss */
+#sendfrom-title .send-to.row-border-top-focus {
+  border-top: 2px solid #0A82A9;
+}
+
+/* line 102, ../sass/home.scss */
+#select-country-row {
+  line-height: 20px;
+  background-color: #FFFFFF;
+}
+/* line 105, ../sass/home.scss */
+#select-country-row .btn-default, #select-country-row .btn-default:hover {
+  border: none;
+}
+/* line 108, ../sass/home.scss */
+#select-country-row #sendfrom-country-col {
+  height: 65px;
+  border-bottom: 2px solid #C7C7CC;
+  padding-top: 5px;
+  border-right: 2px solid #C7C7CC;
+}
+/* line 113, ../sass/home.scss */
+#select-country-row #sendfrom-country-col #sendfrom-flag {
+  margin-right: 2px;
+}
+/* line 116, ../sass/home.scss */
+#select-country-row #sendfrom-country-col .el-brown-title {
+  margin-left: 30px;
+  margin-bottom: 8px;
+}
+/* line 121, ../sass/home.scss */
+#select-country-row .country-name {
+  font-weight: bold;
+}
+/* line 125, ../sass/home.scss */
+#select-country-row #sendto-country-col {
+  height: 65px;
+  border-bottom: 2px solid #C7C7CC;
+  padding-bottom: 40px;
+  padding: 5px 0 0 0;
+  position: relative;
+}
+/* line 131, ../sass/home.scss */
+#select-country-row #sendto-country-col #sendto-flag {
+  margin-top: 9px;
+  margin-left: 10px;
+}
+/* line 135, ../sass/home.scss */
+#select-country-row #sendto-country-col.row-border-focus {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+/* line 139, ../sass/home.scss */
+#select-country-row #sendto-country-col .el-brown-title {
+  margin-left: 31px;
+}
+/* line 142, ../sass/home.scss */
+#select-country-row #sendto-country-col .icon-arrow-down {
+  top: 40px;
+}
+/* line 145, ../sass/home.scss */
+#select-country-row #sendto-country-col .animate-focus {
+  position: absolute;
+}
+/* line 148, ../sass/home.scss */
+#select-country-row #sendto-country-col .btn {
+  padding-top: 6px;
+}
+/* line 152, ../sass/home.scss */
+#select-country-row .dorpdown-container {
+  width: 100%;
+  padding-right: 11px;
+}
+/* line 161, ../sass/home.scss */
+#select-country-row .btn {
+  width: 70%;
+  text-align: left;
+  padding-left: 0px;
+}
+/* line 167, ../sass/home.scss */
+#select-country-row .el-brown-title {
+  margin-left: 14px;
+}
+
+/* line 173, ../sass/home.scss */
+.modal-body ul {
+  padding: 0;
+  margin: 0 auto;
+}
+
+/* line 178, ../sass/home.scss */
+#sendto-countries-modal ul {
+  width: 130px;
+}
+
+/* line 181, ../sass/home.scss */
+#receiver-currency-modal ul {
+  width: 26px;
+}
+
+/* line 185, ../sass/home.scss */
+#sendfrom-bank-modal ul {
+  width: 166px;
+}
+
+/* line 192, ../sass/home.scss */
+.title-row .you-send-title {
+  border-right: 2px solid #C7C7CC;
+  padding-top: 5px;
+}
+
+/* line 198, ../sass/home.scss */
+#send-amount-row {
+  background-color: #FFFFFF;
+  border-bottom: 2px solid #C7C7CC;
+}
+/* line 201, ../sass/home.scss */
+#send-amount-row input[type="number"] {
+  width: 60%;
+}
+/* line 204, ../sass/home.scss */
+#send-amount-row .sendto-currency {
+  float: right;
+  width: 30px;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+/* line 209, ../sass/home.scss */
+#send-amount-row .sendto-currency .icon-arrow-down {
+  top: 13px;
+}
+/* line 213, ../sass/home.scss */
+#send-amount-row .sendfrom-currency {
+  float: right;
+  margin-top: 7px;
+  margin-left: 5px;
+  margin-right: 6%;
+}
+/* line 220, ../sass/home.scss */
+#send-amount-row input:focus {
+  outline: none;
+}
+/* line 223, ../sass/home.scss */
+#send-amount-row .dropdown-arrow {
+  top: -3px;
+}
+/* line 226, ../sass/home.scss */
+#send-amount-row .select-dropdown.currency .btn {
+  padding: 0;
+}
+/* line 230, ../sass/home.scss */
+#send-amount-row .receiver-gets {
+  padding-left: 20px;
+}
+/* line 232, ../sass/home.scss */
+#send-amount-row .receiver-gets .dorpdown-container {
+  height: 26px;
+}
+/* line 236, ../sass/home.scss */
+#send-amount-row .you-send {
+  height: 31px;
+  border-right: 2px solid #C7C7CC;
+}
+/* line 240, ../sass/home.scss */
+#send-amount-row .you-send input, #send-amount-row .receiver-gets input {
+  width: 80px;
+  height: 25px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* line 250, ../sass/home.scss */
+#home-form .icon-arrow-next {
+  width: 20px;
+  height: 20px;
+  margin: -33px auto;
+}
+
+/* line 255, ../sass/home.scss */
+.receiver-gets-title span {
+  padding-left: 5px;
+}
+
+/* line 258, ../sass/home.scss */
+#send-fx-row {
+  background-color: #FFFFFF;
+  padding-top: 12px;
+}
+
+/* line 262, ../sass/home.scss */
+#send-amount-fx {
+  text-align: center;
+}
+
+/* line 267, ../sass/home.scss */
+.total-panel .el-text {
+  padding-right: 28px;
+  text-align: right;
+}
+
+/* line 272, ../sass/home.scss */
+#total-header {
+  padding-top: 5px;
+}
+
+/* line 275, ../sass/home.scss */
+#sender-amount {
+  font-size: 15px;
+}
+
+/* line 279, ../sass/home.scss */
+#send-delivery-method {
+  margin-top: 10px;
+}
+/* line 281, ../sass/home.scss */
+#send-delivery-method button {
+  float: left;
+}
+/* line 284, ../sass/home.scss */
+#send-delivery-method .icon-arrow-down {
+  top: 20px;
+}
+/* line 287, ../sass/home.scss */
+#send-delivery-method .btn {
+  padding: 0;
+}
+
+/* line 291, ../sass/home.scss */
+#send-tol-amount-row {
+  padding-bottom: 6px;
+  border-bottom: 2px solid #C7C7CC;
+  font-weight: bold;
+}
+
+/* line 297, ../sass/home.scss */
+#receiver-tol {
+  height: 35px;
+  line-height: 33px;
+  font-weight: bold;
+}
+
+/* line 304, ../sass/home.scss */
+#bank-row {
+  margin-top: 10px;
+}
+/* line 306, ../sass/home.scss */
+#bank-row .icon-arrow-down {
+  top: 24px;
+}
+/* line 309, ../sass/home.scss */
+#bank-row .btn {
+  padding: 0;
+  margin-top: -12px;
+}
+
+/* line 315, ../sass/home.scss */
+#choose-bank-title {
+  margin-top: 25px;
+}
+
+/* line 320, ../sass/home.scss */
+#disclamier5 .tip:before, #disclamier5 .tip:after {
+  right: 30%;
+}
+
+/* line 325, ../sass/home.scss */
+#disclamier4-1 .tip:before, #disclamier4-1 .tip:after {
+  left: 50%;
+}
+
+/* line 330, ../sass/home.scss */
+#disclamier4-2 .tip {
+  margin-bottom: 10px;
+}
+/* line 333, ../sass/home.scss */
+#disclamier4-2 .tip:before, #disclamier4-2 .tip:after {
+  left: 15px;
+}
+
+/* line 337, ../sass/home.scss */
+#otherCountryTip {
+  margin-top: -10px;
+}
+/* line 339, ../sass/home.scss */
+#otherCountryTip .tip:before, #otherCountryTip .tip:after {
+  right: 20%;
+}
+
+/* line 343, ../sass/home.scss */
+#otherBankTip {
+  margin-top: -10px;
+}
+/* line 345, ../sass/home.scss */
+#otherBankTip .tip:before, #otherBankTip .tip:after {
+  left: 20%;
+}
+
+/* line 3, ../sass/sender-info.scss */
+#sender-detail {
+  overflow: hidden;
+  height: 100px;
+}
+/* line 7, ../sass/sender-info.scss */
+#sender-detail .row-border-left {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/* line 13, ../sass/sender-info.scss */
+#sender-detail .el-brown-title div, #sender-detail .el-text-s div {
+  height: 20px;
+  line-height: 20px;
+}
+
+/* line 20, ../sass/sender-info.scss */
+.sender-birth .btn {
+  padding-left: 0;
+}
+/* line 23, ../sass/sender-info.scss */
+.sender-birth .el-brown-title {
+  padding-top: 3px;
+}
+/* line 27, ../sass/sender-info.scss */
+.sender-birth .birthday .birthday-col {
+  width: 33.3%;
+  float: left;
+  padding-left: 15px;
+}
+/* line 32, ../sass/sender-info.scss */
+.sender-birth .birthday .errText {
+  color: #D0021B;
+}
+/* line 35, ../sass/sender-info.scss */
+.sender-birth .birthday .correctText {
+  color: #44433D;
+}
+
+/* line 45, ../sass/sender-info.scss */
+#sender-BDate-modal .modal-dialog {
+  height: auto;
+}
+
+/* line 51, ../sass/sender-info.scss */
+#sender-BDate-modal li, #sender-BMonth-modal li, #sender-BYear-modal li {
+  text-align: center;
+}
+
+/* line 57, ../sass/sender-info.scss */
+#sender-phone-row .phone-countrycode {
+  float: left;
+  margin-right: 5px;
+  padding-top: 12px;
+  height: 40px;
+}
+/* line 63, ../sass/sender-info.scss */
+#sender-phone-row .floating-placeholder {
+  width: 90%;
+}
+/* line 65, ../sass/sender-info.scss */
+#sender-phone-row .floating-placeholder label {
+  margin-left: -15px;
+}
+
+/* line 5, ../sass/receiver-info.scss */
+#receiver-info-container .sending-amount .el-text {
+  height: 20px;
+  line-height: 20px;
+}
+
+/* line 12, ../sass/receiver-info.scss */
+#trans-purpose-modal ul {
+  width: 199px;
+}
+
+/* line 17, ../sass/receiver-info.scss */
+.dorpdown-container.arrow-middle .icon-arrow-down {
+  top: 19px;
+}
+
+/* line 23, ../sass/receiver-info.scss */
+#trans-purpose .btn {
+  margin-top: -10px;
+}
+
+/* line 3, ../sass/review.scss */
+#review-container .col-xs-1, #review-container .col-xs-10, #review-container .col-xs-11, #review-container .col-xs-12, #review-container .col-xs-2, #review-container .col-xs-3, #review-container .col-xs-4, #review-container .col-xs-5, #review-container .col-xs-6, #review-container .col-xs-7, #review-container .col-xs-8, #review-container .col-xs-9 {
+  padding-right: 8px;
+}

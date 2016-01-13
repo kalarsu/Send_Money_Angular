@@ -1,0 +1,72 @@
+@import "utilities/application.scss";
+
+html{
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body, html {
+    height: 100%;
+    position: relative;
+}
+body {
+    font-family: $globalFont;
+    color: $bodyTextColor;
+    background-color: $bodyBgColor;
+}
+h1{
+    color: $h1TextColor;
+    font-size: $h1TextSize;
+    margin-top: 20px;
+}
+h2 {
+    color: $h2TextColor;
+    font-size: $h2TextSize;
+    margin-top: 8px;
+    margin-bottom: 7px;
+}
+h1,h2 {
+    line-height: 25px;
+    font-weight: bold;
+}
+h3{
+    color: $h3TextColor;
+    font-size: $h3TextSize;
+}
+h4 {
+    margin: 0;
+}
+p {
+    margin: 10px 0;
+}
+input{
+    color: $inputTextColor;
+    &.err{
+        color: $errTextColor;
+    }
+}
+.clearfix {
+    clear: both;
+    overflow: auto;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+a{
+    color: $linkTextColor;
+    //font-weight: bold;
+    font-size: $linkTextSize;
+}
+sup{
+    color: $subTextColor;
+    font-size: $supTextSize;
+}
+//included in bootstrap
+//*, :after, :before {
+    //-webkit-box-sizing: border-box;
+    //-moz-box-sizing: border-box;
+    //box-sizing: border-box;
+//}

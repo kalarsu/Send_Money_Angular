@@ -1,0 +1,66 @@
+/* line 3, ../sass/sender-info.scss */
+#sender-detail {
+  overflow: hidden;
+  height: 100px;
+}
+/* line 7, ../sass/sender-info.scss */
+#sender-detail .row-border-left {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/* line 13, ../sass/sender-info.scss */
+#sender-detail .el-brown-title div, #sender-detail .el-text-s div {
+  height: 20px;
+  line-height: 20px;
+}
+
+/* line 20, ../sass/sender-info.scss */
+.sender-birth .btn {
+  padding-left: 0;
+}
+/* line 23, ../sass/sender-info.scss */
+.sender-birth .el-brown-title {
+  padding-top: 3px;
+}
+/* line 27, ../sass/sender-info.scss */
+.sender-birth .birthday .birthday-col {
+  width: 33.3%;
+  float: left;
+  padding-left: 15px;
+}
+/* line 32, ../sass/sender-info.scss */
+.sender-birth .birthday .errText {
+  color: #D0021B;
+}
+/* line 35, ../sass/sender-info.scss */
+.sender-birth .birthday .correctText {
+  color: #44433D;
+}
+
+/* line 45, ../sass/sender-info.scss */
+#sender-BDate-modal .modal-dialog {
+  height: auto;
+}
+
+/* line 51, ../sass/sender-info.scss */
+#sender-BDate-modal li, #sender-BMonth-modal li, #sender-BYear-modal li {
+  text-align: center;
+}
+
+/* line 57, ../sass/sender-info.scss */
+#sender-phone-row .phone-countrycode {
+  float: left;
+  margin-right: 5px;
+  padding-top: 12px;
+  height: 40px;
+}
+/* line 63, ../sass/sender-info.scss */
+#sender-phone-row .floating-placeholder {
+  width: 90%;
+}
+/* line 65, ../sass/sender-info.scss */
+#sender-phone-row .floating-placeholder label {
+  margin-left: -15px;
+}

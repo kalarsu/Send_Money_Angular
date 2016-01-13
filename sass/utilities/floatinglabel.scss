@@ -1,0 +1,56 @@
+@import "utilities/application.scss";
+
+input, .floating-placeholder{
+  //line-height: 33px;
+  height: 40px;
+  margin:0;
+  padding:0;
+}
+
+//.floating-placeholder input:focus+label{
+  //color: $lightGray;
+//}
+
+.floating-placeholder {
+  position:relative;
+  float: left;
+  width: 100%;
+  input{
+    width: 100%;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    background:transparent;
+    z-index:2;
+  }
+  label{
+    display:block;
+    position:absolute;
+    top:0;
+    font-size: $floatLabelTextSize;
+    line-height: 28px;
+    color: $floatLabelTextColor;
+    z-index:1;
+    @include transform-origin(0,0.0em);
+    @include transition(transform 160ms, color 200ms);
+    @include transform(scale(1,1) rotateY(0));
+  }
+}
+
+.floating-placeholder-float {
+  label{
+    @include transform(scale(0.9,0.9) rotateY(0));
+    font-weight: normal;
+    color: $flatLabelEnteredTextColor;
+  }
+  input{
+    line-height: 60px;
+    height: 60px;
+    border: none;
+  }
+}
+

@@ -1,0 +1,294 @@
+		<div class="page-container">  <!-- ng-controller="countryController as country" -->
+			<div class="top-banner">
+				<div id="home-logo" class="icons-lib"></div>
+			</div>
+			<header class="header-img">
+				<div id="hero-bg">
+					
+					<div id="home-tagline" ng-cloak>
+						Send money directly<br/> from your bank.<br/>No signup required.
+						<!-- {{homeMessage}} -->
+					</div>
+				</div>
+			</header>
+			<form name="form" id="home-form" method="post" novalidate ng-submit="homeSubmit(form.$valid, $event)"> <!--form.$valid && -->
+				<input type="hidden" name="sendto-country" value="{{selectedIsoCode}}">
+				<input type="hidden" name="delivery-method" value="{{deliverMethod}}">
+				<input type="hidden" name="sendfrom-bank" value="{{sendFromBankCode}}">
+				<div class="container-fluid" id="home-page-container">
+					<div ng-click="homeDiv($event)"> <!--Form content for scrolling up-->
+						<div class="row white-row-nb top-progress-bar" ng-show="showProgressBar">
+							<div class="col-xs-3 el-blue-title"><div><a href="home.html">Estimate</a></div><div class="active-step"></div></div>
+							<div class="col-xs-3 el-gray-title">Sender</div>
+							<div class="col-xs-3 el-gray-title">Receiver</div>
+							<div class="col-xs-3 el-gray-title">Review</div>
+						</div>
+						<div class="row" style="margin-bottom:25px">
+						</div>
+<!-- 						<div class="row white-row-nb" id="sendfrom-title">
+							<div class="col-xs-6 send-from"><span class="el-brown-title">Send from</span></div>
+							<div class="col-xs-6 send-to row-border-top-focus"><span class="el-brown-title">Send to</span></div>
+						</div> -->
+						<div class="row first-row" id="select-country-row">
+							<div id="sendfrom-country-col" class="col-xs-6">
+								<div class="el-brown-title">Send from</div>
+								<div id="sendfrom-flag" class="flag-icon US left"></div>
+								<div class="country-name left">United States</div>
+							</div>
+							<div id="sendto-country-col" class="col-xs-6 {{sendToCountryFlag}}">
+								<div class="el-brown-title">Send to</div>
+								<div id="sendto-flag" class=" left {{flagicon}}"></div>
+								<div class="dorpdown-container" data-toggle="modal" data-target="#sendto-countries-modal">
+									<button type="button" id="selected-country" name="sendto-country" value="{{selectedIsoCode}}" class="btn dropdown {{isCountrySelected}}" ng-cloak>{{selectedCountry}}</button>
+									<div class="icons-lib icon-arrow-down"></div>
+								</div>		
+								    
+							</div>
+						</div>
+						<div class="row white-row-nb" id="otherCountryTip" ng-show="otherCountryFlag">
+							<div class="tip err">
+								We are sorry this service is not available for your country. Please visit <a href>www.westernunion.com</a> to send money to a full list of countries.
+							</div>
+						</div>
+
+						<div ng-hide="selectedCountry=='Select Country' ? true : false">
+							<div class="row white-row-nb title-row">
+								<div class="col-xs-6 you-send-title"><span class="el-brown-title">You send</span></div>
+								<div class="col-xs-6 receiver-gets-title">
+									<span class="el-brown-title">Receiver gets<a href="" ng-click="disClick(5)"><sup data="tooltips">1</sup></a></span>
+								</div>
+							</div>
+							<div class="row" id="send-amount-row">
+								<div class="col-xs-6 you-send">
+									<input name="send-amount" id="send-amount" class="{{sendAmountErrMsg!='' ? 'err' : ''}}" type="tel" maxlength="7" ng-model="sendAmount" placeholder="0.00" ng-keyup="amountKeyup('send')" autocomplete="off" ng-focus="true">
+									<span class="sendfrom-currency">USD</span>
+									<!-- <hr class="clearfix el-hr {{sendAmountFlag}}" /> -->
+								</div>
+								<div class="col-xs-6 receiver-gets">
+									<input name="receive-amount" id="receive-amount" type="tel" maxlength="10" placeholder="0.00" ng-model="receiverAmount" ng-keyup="amountKeyup('receive')" autocomplete="off">
+									<span class="sendfrom-currency" ng-hide="showCurrency" ng-cloak>{{targetCurrency}}</span>
+									<div class="sendto-currency" ng-show="showCurrency" data-toggle="modal" data-target="#receiver-currency-modal">
+										<div class="select-dropdown currency">
+											<div class="dorpdown-container">
+												<button type="button" id="receiver-currency" class="btn dropdown" value="" ng-cloak>{{targetCurrency}}</button>
+												<span class="icons-lib icon-arrow-down"></span>
+											</div>
+								        </div>
+							        </div>
+							        <!-- <hr class="clearfix el-hr" /> -->
+								</div>
+							</div>
+							<!-- <div class="row white-row-nb">
+								<div class="col-xs-12"><div class="icons-lib icon-arrow-next"></div></div>
+							</div> -->
+							<div class="row white-row-nb" ng-show="sendAmountErr">
+								<div class="col-xs-12 err-text" ng-cloak>{{sendAmountErrMsg}}</div>
+							</div>
+							<div class="row white-row-nb" ng-show="disclamier5" id="disclamier5">
+								<div class="tip">
+									1. For all transfers, receivers may receive less due to the foreign taxes. For transfers to a bank account, receiver may also receive less due to the fees charged by the receiver bank.
+								</div>
+							</div>
+							<div class="row white-row-spacing" ng-hide="isCurrency"></div>
+							<div class="row" id="send-fx-row" ng-show="isCurrency">
+								<div class="col-xs-12" id="send-amount-fx">
+									<div class="el-brown-title">Estimated Exchange rate<a href="" ng-click="disClick(41)"><sup data="tooltips">2</sup></a></div>
+									<div class="el-brown-text" ng-cloak>1.00 USD = {{setupFxRate}} {{targetCurrency}}</div>
+								</div>
+							</div>
+						</div>
+
+						
+						
+						<div class="row white-row-spacing" ng-show="isCurrency && !disclamier4_1"></div>
+						<div class="row white-row-nb" ng-show="disclamier4_1" id="disclamier4-1">
+							<div class="tip">
+								2. Western Union also makes money from currency exchange. When choosing a money transmitter, carefully compare both transfer fees and exchange rates.
+							</div>
+						</div>
+						<div class="row white-row end-row {{deliveryMethodFlag}}" id="send-delivery-method" ng-show="showDeliverMethod">
+							<div class="col-xs-12 el-text" data-toggle="modal" value="" data-target="#sendto-option-modal">
+								<div class="dorpdown-container">
+									<div class="el-brown-title">How should we send the money?</div>
+									<button type="button" class="btn dropdown {{isMethodSelected}}" ng-cloak>{{receiverOption}}</button>
+									<span class="icons-lib icon-arrow-down"></span>
+								</div>
+							</div>
+						</div>
+						<div ng-show="showTolPanel" class="total-panel">
+							<div class="row white-row-nb" id="total-header">
+								<div class="col-xs-12"><span class="el-brown-title">Summary</span></div>
+							</div>
+							<div class="row white-row-nb" id="sender-amount">
+								<div class="col-xs-3 el-gray-title">Amount:</div>
+								<div class="col-xs-9 el-text" ng-cloak>{{subAmount | number:2}} USD</div>
+							</div>
+							<div class="row white-row-nb">
+								<div class="col-xs-2 el-gray-title">Fee:<a href="" ng-click="disClick(42)"><sup data="tooltips">2</sup></a></span></div>
+								<div class="col-xs-10 el-text" ng-cloak>+ {{sendFee}} USD</div>
+							</div>
+							<div class="row white-row-nb" ng-show="disclamier4_2" id="disclamier4-2">
+								<div class="tip">
+									2. Western Union also makes money from currency exchange. When choosing a money transmitter, carefully compare both transfer fees and exchange rates.
+								</div>
+							</div>
+							<div class="row white-row-nb" id="send-tol-amount-row">
+								<div class="col-xs-4 el-gray-title">You pay:</div>
+								<div class="col-xs-8 el-text">
+									<span id="send-tol-amount" ng-cloak>{{tolAmount | number:2}}</span> USD
+									<div ng-show="deliverMethodErr" class="err-text" ng-cloak>{{deliverMethodErrMsg}}</div>
+								</div>
+							</div>
+							<div class="row white-row-nb end-row" id="receiver-tol" ng-show="targetCurrency!='USD'">
+								<div class="col-xs-5 el-gray-title">Receiver gets:</div>
+								<div class="col-xs-7 el-text" ng-cloak>{{receiverAmount}}&nbsp;{{targetCurrency}} </div>
+							</div>
+							<!-- <div class="row" id="choose-bank-title">
+								<div class="col-xs-12"><span class="el-brown-title">Transfer money directly from your bank account</span></div>
+							</div> -->
+							<div class="row white-row end-row {{sendFromBankFlag}}" id="bank-row">
+								<div class="col-xs-12 " data-toggle="modal" data-target="#sendfrom-bank-modal">
+									<div class="dorpdown-container">
+										<div class="el-brown-title">Transfer money directly from your bank account</div>
+										<button type="button" id="selected-country" class="btn dropdown {{isBankSelected}}">{{sendFromBank}}</button>
+										<span class="icons-lib icon-arrow-down"></span>
+										<span class="icons-lib icon-lock"></span>
+									</div>	
+									<!-- <div ng-show="sendFromBankErr" class="err-text">{{sendFromBankErrMsg}}</div> -->	
+								</div>
+							</div>
+							<div class="row white-row-nb" id="otherBankTip" ng-show="sendFromOtherBank">
+								<div class="tip err">
+									We are sorry this service is not available for your bank. Please visit <a href>www.westernunion.com</a> to send money to a full list of banks.
+								</div>
+							</div>
+						</div>
+					</div>  <!--end of Form content for scrolling up-->
+
+
+					<!-- <div class="row">
+						<div class="col-xs-12">
+							<div class="icons-lib icon-lock"></div>
+							<div><h3>Secure bank connection</h3></div>
+						</div>
+					</div> -->
+
+					<div class="row disclaimer-row">
+						<div class="col-xs-12">
+							<div class="disclamier-title"><a href class="toggle-btn">Legal disclaimers and important information</a></div>
+							<div class="icons-lib icon-more toggle-btn"></div>
+						</div>
+						<div class="col-xs-12 legal-statement disclaimer-content">
+							<ul>
+								<li>
+									<sup>1.</sup>
+									For all transfers, receivers may receive less due to the foreign taxes. For transfers to a bank account, receiver may also receive less due to the fees charged by the receiver bank.
+								</li>
+								<li>
+									<sup>2.</sup>
+									Western Union also makes money from currency exchange. When choosing a money transmitter, carefully compare both transfer fees and exchange rates.
+								</li>
+								<li>
+									<sup>3.</sup>
+									Limits vary based on transaction history, receiver's country, location, and delivery methods.
+								</li>
+								<li>
+									<sup>4.</sup>
+									Fees For transactions initiated in California: If you have complaints with respect to any aspect of the money transmission activities conducted at this location, you may contact the California Department of Financial Institutions at its toll-free telephone number, 1-800-622-0620, by email at consumer.complaint@dfi.ca.gov, or by mail at Department of Financial Institutions, Consumer Services, 1810 13th Street, Sacramento, CA 95811.
+								</li>
+								<li>
+									<sup>5.</sup>
+									Data available will be displayed on receipt. Service and funds available depends on certain factors including the service selected, the selection of delayed delivery options, amount sent, destination country, currency available, regulatory issues, consumer protection issues, identification requirements, delivery restrictions, agent location hours, and different in time zones (collective, “Restrictions”).
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row" id="home-submit-btn-row">
+						<input type="submit" class="full-width-btn button" value="Continue" ng-disabled="submitBtnDisabled"> <!--ng-disabled="!showTolPanel"-->
+					</div> 
+				<!-- </div> -->
+			</form>
+			<!-- Country dropdown Modal start-->
+			<div class="modal fade" id="sendto-countries-modal" role="dialog">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+						  <button type="button" class="close" data-dismiss="modal"><div class="icons-lib icon-close"></div></button>
+						</div>
+						<div class="modal-body">
+							<ul>
+							  <li ng-repeat="(country,isocode) in countries" ng-click="updateCountry(country,isocode,false,false)" data-dismiss="modal">
+						  		<i class="flag-icon {{isocode}}"></i>
+							  	<div>{{country}}</div>
+							  </li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Currency dropdown Modal start-->
+			<div class="modal fade" id="receiver-currency-modal" role="dialog">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+						  <button type="button" class="close" data-dismiss="modal"><div class="icons-lib icon-close"></div></button>
+						</div>
+						<div class="modal-body">
+						  <ul>
+						  	<li ng-repeat="fxSet in fxSets" ng-click="updateCurrency(fxSet.currencyIsoCode, fxSet.exchangeRate)" data-dismiss="modal">{{fxSet.currencyIsoCode}}</li>
+						  </ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- fee option dropdown Modal start-->
+			<div class="modal fade" id="sendto-option-modal" role="dialog">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+						  <button type="button" class="close" data-dismiss="modal"><div class="icons-lib icon-close"></div></button>
+						</div>
+						<div class="modal-body">
+						  <ul>
+						  	<li data-dismiss="modal" ng-repeat="delivery in deliveries" ng-click="updateTolAmount(delivery.type,delivery.fee,delivery.speed, delivery.maxLimit, true)" ng-hide="delivery.type=='D2B' && targetCurrency=='USD'">
+						  		<div class="popup-msg-box">
+								    <div class="popup-icon ">
+								    	<div class="icons-lib {{delivery.type=='D2B' ? 'icon-bank' : 'icon-agent' }}"></div>
+								    </div>
+								    <div class="popup-text">
+								    	<div class=popup-title>
+								    	{{delivery.type=='D2B' ? "Send to receiver's bank account" : "Pickup cash at Western Union location"}}
+								    	</div>
+								    	
+										<br/>Service: {{delivery.speed}} days<br/>Fee:  {{delivery.fee }} USD
+									</div>
+								</div>
+						  	</li>
+						  </ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- bank option dropdown Modal start-->
+			<div class="modal fade" id="sendfrom-bank-modal" role="dialog">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+						  <button type="button" class="close" data-dismiss="modal"><div class="icons-lib icon-close"></div></button>
+						</div>
+						<div class="modal-body">
+						  <ul>
+						  	<li data-dismiss="modal" ng-repeat="(bankName,bankCode) in bankOptions" ng-click="updateBankName(bankName,bankCode)">{{bankName}}</li>
+						  </ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--end of Modal-->
+		</div><!--end of home-page-container-->	
+        <!--<script type="text/javascript" src="js/home.js"></script>-->
+        <script>
+		$(document).ready(function(){
+		    $('[data-toggle="tooltip"]').tooltip();   
+		});
+		</script>

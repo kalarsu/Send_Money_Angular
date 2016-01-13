@@ -1,0 +1,25 @@
+{
+  "customer": {
+    "customerId": "111012104",
+    "externalId": "155245444",
+    "merchantId": "110005502",
+    "name": "Juan Mata",
+    "driverLicense":{
+        "number": "999999999",
+        "state": "CA"
+    },
+    "address":{
+      "address1": "123 Main St",
+      "address2": "587",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94107",
+      "country": "us"
+    },
+    "phone": "415-465-7565",
+    "email": "juanmata@email.com",
+    "createdAt": 1378316745326,
+    "updatedAt": 1378316745326,
+    "recordVersion": 2
+  }
+}

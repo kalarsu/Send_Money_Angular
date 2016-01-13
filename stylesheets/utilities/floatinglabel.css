@@ -1,0 +1,64 @@
+/* line 3, ../../sass/utilities/floatinglabel.scss */
+input, .floating-placeholder {
+  height: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 14, ../../sass/utilities/floatinglabel.scss */
+.floating-placeholder {
+  position: relative;
+  float: left;
+  width: 100%;
+}
+/* line 18, ../../sass/utilities/floatinglabel.scss */
+.floating-placeholder input {
+  width: 100%;
+  font-size: 15px;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  background: transparent;
+  z-index: 2;
+}
+/* line 30, ../../sass/utilities/floatinglabel.scss */
+.floating-placeholder label {
+  display: block;
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  line-height: 28px;
+  color: #929497;
+  z-index: 1;
+  -moz-transform-origin: 0 0em;
+  -ms-transform-origin: 0 0em;
+  -webkit-transform-origin: 0 0em;
+  transform-origin: 0 0em;
+  -moz-transition: -moz-transform 160ms, color 200ms;
+  -o-transition: -o-transform 160ms, color 200ms;
+  -webkit-transition: -webkit-transform 160ms, color 200ms;
+  transition: transform 160ms, color 200ms;
+  -moz-transform: scale(1, 1) rotateY(0);
+  -ms-transform: scale(1, 1) rotateY(0);
+  -webkit-transform: scale(1, 1) rotateY(0);
+  transform: scale(1, 1) rotateY(0);
+}
+
+/* line 45, ../../sass/utilities/floatinglabel.scss */
+.floating-placeholder-float label {
+  -moz-transform: scale(0.9, 0.9) rotateY(0);
+  -ms-transform: scale(0.9, 0.9) rotateY(0);
+  -webkit-transform: scale(0.9, 0.9) rotateY(0);
+  transform: scale(0.9, 0.9) rotateY(0);
+  font-weight: normal;
+  color: #906B10;
+}
+/* line 50, ../../sass/utilities/floatinglabel.scss */
+.floating-placeholder-float input {
+  line-height: 60px;
+  height: 60px;
+  border: none;
+}

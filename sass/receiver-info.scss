@@ -1,0 +1,26 @@
+@import "utilities/application.scss";
+
+#receiver-info-container{
+	.sending-amount{
+		.el-text{
+			height: 20px;
+			line-height: 20px;
+		}
+	}
+}
+
+#trans-purpose-modal ul{
+	width: 199px;
+}
+
+.dorpdown-container.arrow-middle{
+	.icon-arrow-down{
+		top: 19px;
+	}
+}
+
+#trans-purpose{
+	.btn{
+		margin-top: -10px;
+	}
+}

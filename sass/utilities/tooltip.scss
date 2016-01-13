@@ -1,0 +1,38 @@
+@import "utilities/application.scss";
+
+.tip {
+	margin-top: 15px;
+	background: $tooltipBgColor;
+	border: 2px solid $tooltipBdColor;
+	padding: 10px;
+	font-size: $tooltipTextSize;
+	position: relative;
+	width: 100%;
+	color: $midGray;
+  	font-weight: bold;
+  	&.err{
+  		color: $underLineErrColor;
+  		border-color: $underLineErrColor; 
+  		&:before{
+  			border-bottom-color: $underLineErrColor;
+  		}
+  	}
+}
+.tip:before {
+	position: absolute;
+	top: -14px;
+	display: inline-block;
+	border-right: 28px solid transparent;
+	border-bottom: 14px solid $tooltipBdColor;
+	border-left: 28px solid transparent;
+	content: '';
+}
+.tip:after {
+	position: absolute;
+	top: -11px;
+	display: inline-block;
+	border-right: 28px solid transparent;
+	border-bottom: 12px solid $tooltipArrowColor; 
+	border-left: 28px solid transparent;
+	content: '';
+}
